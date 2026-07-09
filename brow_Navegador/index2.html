@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrastando caixa simples</title>
+</head>
+<style>
+    #bx{
+        width: 80px;
+        height: 80px;
+        margin: 20px;
+        cursor: grab;
+        background-color: tomato;
+    }
+    #zonaArrasto{
+        width: 200px;
+        height: 150px;
+        border: 2px dashed #666;
+        text-align: center;
+        padding-top:50px;
+    }
+</style>
+<body>
+    <h3>Arratar para zona de soltar</h3>
+    <div id="bx" draggable="true"></div>
+    <div id="zonaArrasto">Arraste Aqui</div>
+    
+    <script>
+        const bx = document.getElementById('bx')
+        const zonaSolta = document.getElementById('zonaArrasto')
+
+        bx.addEventListener('dragstart', (e)=>{
+            e.dataTransfer.setData('text/plain', 'bx')
+        });
+
+        zonaSolta.addEventListener('dragover', (e)=> e.preventDefault())
+        zonaSolta.addEventListener('drop', (e)=>{
+            e.preventDefault()
+            zonaSolta.textContent = 'Caixa Soltada!'
+            
+        })
+
+        
+    </script>
+</body>
+</html>
