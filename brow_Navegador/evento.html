@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop and drop usando selector</title>
+    <script src="evento.js"></script>
+
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
+    }
+    .container{
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .caixa{
+        width: 100px;
+        height: 60px;
+        background-color: #3498db;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: grab;
+        user-select: none;
+        border-radius: 8px;
+    }
+    #caixa-grande{
+        width: 300px;
+        height: 150px;
+        border: 2px dashed #aaa;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .destaque{
+        border-color: #2ecc71;
+    }
+</style>
+<body>
+
+    <h2>Arrastar caixas para area grande</h2>
+    <div class="container">
+        <div draggable="true" class="caixa" id="caixa1">HTML</div>
+        <div draggable="true" class="caixa" id="caixa2">CSS</div>
+        <div draggable="true" class="caixa" id="caixa3">JavaScript</div>
+    </div>
+
+    <div id="caixa-grande"></div>
+    
+    
+</body>
+</html>
