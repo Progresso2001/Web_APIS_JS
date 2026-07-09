@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos arrastados</title>
+</head>
+<style>
+    #elementoArrastado{
+        width: 100px;
+        height: 50px;
+        background-color: blue;
+        color: white;
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+    }
+    #zonaDrop{
+        width: 300px;
+        height: 200px;
+        border: 2px dashed #ccc;
+        padding: 20px;
+        margin:10px;
+        text-align: center;
+    }
+    .destaque{
+        background-color: #52adb9;
+    }
+</style>
+<body>
+    <div draggable="true" id="elementoArrastado">Arrasta-me</div>
+    <div id="zonaDrop">Zona Drop</div>
+    <script src="drop.js" defer></script>
+</body>
+</html>
