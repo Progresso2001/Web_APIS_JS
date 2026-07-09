@@ -11,12 +11,14 @@
         padding: 10px;
     }
     .container{
-        display: flex;
-        flex-wrap: wrap;
+        /* display: flex;
+        flex-wrap:wrap; */
+        display: grid;
+        grid-template-columns: repeat(5, 1f);
         gap: 10px;
         margin-bottom: 20px;
     }
-    #caixa1, #caixa2{
+    #caixa1, #caixa2, #caixa3{
         width: 100px;
         height: 50px;
         background-color: #d2ad;
@@ -28,7 +30,7 @@
     }
     #caixagrande{
         width: 400px;
-        height: 250px;
+        height: 150px;
         border: 2px dashed #ccc;
         display: flex;
         flex-wrap: wrap;
@@ -40,9 +42,11 @@
     }
 </style>
 <body>
-
+    <h3>Elementos inseridos na caixa</h3>
     <div class="container">
         <div draggable="true" class='caixa' id="caixa1">HTML</div>
+        <div draggable="true" class='caixa' id="caixa1">CSS</div>
+
         <div draggable="true" class="caixa" id="caixa2">JavaScript</div>
 
         <div id="caixagrande"></div>
@@ -76,6 +80,11 @@
             const eleEncontrado = document.querySelector(seletor)
             inserir.appendChild(eleEncontrado)
             inserir.classList.remove('destaque')
+        })
+
+        inserir.addEventListener('dragend', ()=>{
+            // console.log('Elementos inseridos com sucesso.......')
+            alert('elementos inseridos....')
         })
 
 
